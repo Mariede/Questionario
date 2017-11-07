@@ -80,6 +80,42 @@ GO
 -- --------------------------------------------------------------------------------------------
 
 -- --------------------------------------------------------------------------------------------
+-- [QUESTIONARIO].[INFO_SOCIAL_RESPOSTA]
+-- --------------------------------------------------------------------------------------------
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [QUESTIONARIO].[INFO_SOCIAL_RESPOSTA](
+	[ID_INFO_SOCIAL_RESPOSTA] [int] NOT NULL,
+	[DESCRICAO] [varchar](100) NOT NULL,
+ CONSTRAINT [PK_INFO_SOCIAL_RESPOSTA] PRIMARY KEY CLUSTERED
+(
+	[ID_INFO_SOCIAL_RESPOSTA] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+-- --------------------------------------------------------------------------------------------
+-- [QUESTIONARIO].[INFO_SOCIAL_RESPOSTA_COMPLEMENTAR]
+-- --------------------------------------------------------------------------------------------
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [QUESTIONARIO].[INFO_SOCIAL_RESPOSTA_COMPLEMENTAR](
+	[ID_INFO_SOCIAL_RESPOSTA_COMPLEMENTAR] [int] NOT NULL,
+	[DESCRICAO] [varchar](100) NOT NULL,
+ CONSTRAINT [PK_INFO_SOCIAL_RESPOSTA_COMPLEMENTAR] PRIMARY KEY CLUSTERED
+(
+	[ID_INFO_SOCIAL_RESPOSTA_COMPLEMENTAR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+-- --------------------------------------------------------------------------------------------
 -- [QUESTIONARIO].[INFO_SOCIAL_QUESTIONARIO]
 -- --------------------------------------------------------------------------------------------
 SET ANSI_NULLS ON
@@ -298,42 +334,6 @@ CREATE TABLE [QUESTIONARIO].[INFO_SOCIAL_RESULTADO](
 (
 	[ID_INFO_SOCIAL_FOLHA_RESPOSTA] ASC,
 	[ID_INFO_SOCIAL_OPCAO] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
--- --------------------------------------------------------------------------------------------
--- [QUESTIONARIO].[INFO_SOCIAL_RESPOSTA]
--- --------------------------------------------------------------------------------------------
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [QUESTIONARIO].[INFO_SOCIAL_RESPOSTA](
-	[ID_INFO_SOCIAL_RESPOSTA] [int] NOT NULL,
-	[DESCRICAO] [varchar](100) NOT NULL,
- CONSTRAINT [PK_INFO_SOCIAL_RESPOSTA] PRIMARY KEY CLUSTERED
-(
-	[ID_INFO_SOCIAL_RESPOSTA] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
--- --------------------------------------------------------------------------------------------
--- [QUESTIONARIO].[INFO_SOCIAL_RESPOSTA_COMPLEMENTAR]
--- --------------------------------------------------------------------------------------------
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [QUESTIONARIO].[INFO_SOCIAL_RESPOSTA_COMPLEMENTAR](
-	[ID_INFO_SOCIAL_RESPOSTA_COMPLEMENTAR] [int] NOT NULL,
-	[DESCRICAO] [varchar](100) NOT NULL,
- CONSTRAINT [PK_INFO_SOCIAL_RESPOSTA_COMPLEMENTAR] PRIMARY KEY CLUSTERED
-(
-	[ID_INFO_SOCIAL_RESPOSTA_COMPLEMENTAR] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
