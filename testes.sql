@@ -1,15 +1,18 @@
--- QUESTIONARIO.VW_QUESTIONARIO_EXIBIR
+-- ------------------------------------------------------------------
+-- QUESTIONARIO.VW_QUESTIONARIO_OPCOES_EXIBIR
 SELECT
 	*
 FROM
-	QUESTIONARIO.VW_QUESTIONARIO_EXIBIR
+	QUESTIONARIO.VW_QUESTIONARIO_OPCOES_EXIBIR
 ORDER BY
 	ID_INFO_SOCIAL_QUESTIONARIO
 	,CATEGORIA_ORDEM
 	,TOPICO_ORDEM
 	,OPCAO_ORDEM;
+-- ------------------------------------------------------------------
 
 
+-- ------------------------------------------------------------------
 -- QUESTIONARIO.VW_FAMILIA_EXIBIR
 SELECT
 	*
@@ -18,8 +21,10 @@ FROM
 ORDER BY
 	ID_FAMILIA
 	,CPF;
+-- ------------------------------------------------------------------
 
 
+-- ------------------------------------------------------------------
 -- QUESTIONARIO.VW_FOLHA_RESPOSTA_EXIBIR
 SELECT
 	*
@@ -47,3 +52,4 @@ ORDER BY
 	,CATEGORIA_ORDEM
 	,TOPICO_ORDEM
 	,OPCAO_ORDEM;
+-- ------------------------------------------------------------------
