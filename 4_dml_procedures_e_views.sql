@@ -201,4 +201,34 @@ AS
 GO
 
 -- --------------------------------------------------------------------------------------------
+-- [QUESTIONARIO].[VW_ANEXO_TOPICO_EXIBIR]
+-- --------------------------------------------------------------------------------------------
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER VIEW [QUESTIONARIO].[VW_ANEXO_TOPICO_EXIBIR]
+AS
+
+/*
+-- RETORNA ANEXOS SALVOS
+-- PENDENTE LINKAR COM FILEDB E ANEXO EFETIVO
+*/
+
+	SELECT
+		A.ID_INFO_SOCIAL_FOLHA_RESPOSTA
+		,A.ID_PESSOA
+		,A.DATA_CONFIRMACAO
+		,B.ID_INFO_SOCIAL_ANEXO_TOPICO
+		,B.TITULO_EXIBICAO
+		,C.*
+	FROM
+		QUESTIONARIO.INFO_SOCIAL_FOLHA_RESPOSTA A (NOLOCK)
+		INNER JOIN QUESTIONARIO.INFO_SOCIAL_ANEXO_TOPICO B (NOLOCK)
+			ON (A.ID_INFO_SOCIAL_FOLHA_RESPOSTA = B.ID_INFO_SOCIAL_FOLHA_RESPOSTA)
+		INNER JOIN QUESTIONARIO.VW_QUESTIONARIO_TOPICOS_EXIBIR C (NOLOCK)
+			ON (B.ID_INFO_SOCIAL_TOPICO = C.ID_INFO_SOCIAL_TOPICO);
+GO
+
+-- --------------------------------------------------------------------------------------------
 -- --------------------------------------------------------------------------------------------
