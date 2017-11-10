@@ -10,6 +10,14 @@ GO
 -- --------------------------------------------------------------------------------------------
 
 -- --------------------------------------------------------------------------------------------
+-- [QUESTIONARIO].[FAMILIA]
+-- --------------------------------------------------------------------------------------------
+ALTER TABLE [QUESTIONARIO].[FAMILIA]  WITH CHECK ADD  CONSTRAINT [CK_FAMILIA_ENDERECO_NORMALIZADO] CHECK  (([ENDERECO_NORMALIZADO]=(0) AND [ID_CEP] IS NULL OR [ENDERECO_NORMALIZADO]=(1) AND [ID_CEP] IS NOT NULL))
+GO
+ALTER TABLE [QUESTIONARIO].[FAMILIA] CHECK CONSTRAINT [CK_FAMILIA_ENDERECO_NORMALIZADO]
+GO
+
+-- --------------------------------------------------------------------------------------------
 -- [NOSSACASA].[PESSOA]
 -- --------------------------------------------------------------------------------------------
 ALTER TABLE [QUESTIONARIO].[PESSOA]  WITH CHECK ADD  CONSTRAINT [CK_PESSOA_SEXO] CHECK  (([SEXO]='M' OR [SEXO]='F'))
