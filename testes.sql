@@ -1,4 +1,16 @@
 -- ------------------------------------------------------------------
+-- QUESTIONARIO.VW_QUESTIONARIO_CATEGORIAS_EXIBIR
+SELECT
+	*
+FROM
+	QUESTIONARIO.VW_QUESTIONARIO_CATEGORIAS_EXIBIR
+ORDER BY
+	ID_INFO_SOCIAL_QUESTIONARIO
+	,CATEGORIA_ORDEM;
+-- ------------------------------------------------------------------
+
+
+-- ------------------------------------------------------------------
 -- QUESTIONARIO.VW_QUESTIONARIO_TOPICOS_EXIBIR
 SELECT
 	*
