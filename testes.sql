@@ -12,6 +12,8 @@ ORDER BY
 
 -- ------------------------------------------------------------------
 -- QUESTIONARIO.VW_QUESTIONARIO_TOPICOS_EXIBIR
+
+-- modo simples (subtopicos ja ordenados corretamente) ---------
 SELECT
 	*
 FROM
@@ -20,11 +22,38 @@ ORDER BY
 	ID_INFO_SOCIAL_QUESTIONARIO
 	,CATEGORIA_ORDEM
 	,TOPICO_ORDEM;
+-- -------------------------------------------------------------
+
+-- modo chamada dupla ------------------------------------------
+SELECT	-- RETORNA TOPICOS INICIAIS
+	*
+FROM
+	QUESTIONARIO.VW_QUESTIONARIO_TOPICOS_EXIBIR
+WHERE
+	ID_INFO_SOCIAL_TOPICO_PAI_ABERTO IS NULL
+ORDER BY
+	ID_INFO_SOCIAL_QUESTIONARIO
+	,CATEGORIA_ORDEM
+	,TOPICO_ORDEM;
+
+SELECT	-- RETORNA SUBTOPICOS RELACIONADOS
+	*
+FROM
+	QUESTIONARIO.VW_QUESTIONARIO_TOPICOS_EXIBIR
+WHERE
+	ID_INFO_SOCIAL_TOPICO_PAI_ABERTO IS NOT NULL	-- ID_INFO_SOCIAL_TOPICO_PAI_ABERTO = ID_TOPICO_INICIAL
+ORDER BY
+	ID_INFO_SOCIAL_QUESTIONARIO
+	,CATEGORIA_ORDEM
+	,TOPICO_ORDEM;
+-- -------------------------------------------------------------
 -- ------------------------------------------------------------------
 
 
 -- ------------------------------------------------------------------
 -- QUESTIONARIO.VW_QUESTIONARIO_OPCOES_EXIBIR
+
+-- modo simples (subtopicos ja ordenados corretamente) ---------
 SELECT
 	*
 FROM
@@ -34,6 +63,33 @@ ORDER BY
 	,CATEGORIA_ORDEM
 	,TOPICO_ORDEM
 	,OPCAO_ORDEM;
+-- -------------------------------------------------------------
+
+-- modo chamada dupla ------------------------------------------
+SELECT	-- RETORNA TOPICOS INICIAIS
+	*
+FROM
+	QUESTIONARIO.VW_QUESTIONARIO_OPCOES_EXIBIR
+WHERE
+	ID_INFO_SOCIAL_TOPICO_PAI_ABERTO IS NULL
+ORDER BY
+	ID_INFO_SOCIAL_QUESTIONARIO
+	,CATEGORIA_ORDEM
+	,TOPICO_ORDEM
+	,OPCAO_ORDEM;
+
+SELECT	-- RETORNA SUBTOPICOS RELACIONADOS
+	*
+FROM
+	QUESTIONARIO.VW_QUESTIONARIO_OPCOES_EXIBIR
+WHERE
+	ID_INFO_SOCIAL_TOPICO_PAI_ABERTO IS NOT NULL	-- ID_INFO_SOCIAL_TOPICO_PAI_ABERTO = ID_TOPICO_INICIAL
+ORDER BY
+	ID_INFO_SOCIAL_QUESTIONARIO
+	,CATEGORIA_ORDEM
+	,TOPICO_ORDEM
+	,OPCAO_ORDEM;
+-- -------------------------------------------------------------
 -- ------------------------------------------------------------------
 
 
